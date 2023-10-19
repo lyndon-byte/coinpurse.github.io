@@ -1,0 +1,147 @@
+*{
+
+    font-family: 'Roboto', sans-serif;
+
+}
+
+nav {
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+}
+
+.navbar-brand{
+
+    color:#14A44D;
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+#sidemenubrand{
+
+  color:#14A44D;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+
+/*goupbutton*/
+
+#goupbtn {
+    display: inline-block;
+    background-color: #14A44D;;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-style: none;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+  }
+  #goupbtn::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+  }
+  #goupbtn:hover {
+    cursor: pointer;
+    background-color: #333;
+  }
+  #goupbtn:active {
+    background-color: #14A44D;;
+  }
+  #goupbtn.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+ 
+
+#heromaintext, .card-title{
+
+    color:#14A44D;
+    
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: var(--bd-violet-bg);
+    --bs-tooltip-color: var(--bs-white);
+}
+
+.accordion{
+
+    --bs-accordion-active-bg: #1ace62;
+    --bs-accordion-btn-focus-box-shadow: none;
+    --bs-accordion-active-color: white;
+    
+}
+
+.accordion-button::after{
+
+    background-image: url('https://www.svgrepo.com//show/2087/plus.svg');
+
+}
+
+.accordion-button:not(.collapsed)::after{
+
+    background-image: url('https://static.thenounproject.com/png/1890803-200.png');
+
+}
+
+
+#footermainlogo{
+
+ 
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+#uname, #pword,#viewpasswordicon, #viewpasswordiconreg,  #viewpasswordiconconfirmreg, #fnameregistration, #lnameregistration , #unameregistration, #emailregistration, #pwordregistration, #confirmpwordregistration{
+
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0%;
+  border-color: rgb(155, 153, 153);
+  box-shadow: none;
+  background-color: white;
+ 
+  
+}
+
+#phonenumber, #phonenumberinput{
+
+ 
+  border-right: solid;
+  border-right-width: 1px;
+  border-radius: 0%;
+  border-color: rgb(218, 213, 213);
+  box-shadow: none;
+  background-color: white;
+
+}
+
+
+
+/*preventing number input to show up and down btn*/
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

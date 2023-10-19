@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coinpurse</title>
+    <link rel="shortcut icon" href="./logo-package/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/viewport.css">
+  </head>
+  <body class="bg-light ">
+
+    <!---Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top " style="background-color: white;">
+      <div class="container" >
+        <a class="navbar-brand" href="#">
+            Coinpurse
+        </a>
+      
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end " id="navbarNavAltMarkup">
+          <div class="navbar-nav m-2 " >
+           
+            <a class="nav-link active text-success me-3" aria-current="page" href="#" onclick="gotofaq()"><i class="fa-regular fa-circle-question fs-5 "></i> Help</a>
+            <a class="nav-link active text-success me-3" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#loginmodal"><i class="fa-regular fa-circle-user fs-5 "></i> Log in</a>
+            <button class="btn btn-success " style="width: 150px;" data-bs-toggle="modal" data-bs-target="#regmodal">Register</button>
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+  <!--End of Navbar-->
+
+  
+  <button id="goupbtn"></button>
+ 
+     
+  <!--Hero-->
+   
+  <div class="container-fluid col-xxl-8 px-4 py-5 mt-5" id="herocontainer">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6 " id="heroimg">
+        <img src="https://img.freepik.com/premium-photo/smiling-young-man-holding-smart-phone-looking-it-portrait-happy-man-using-mobile-phone-isolated-green-background_255757-1880.jpg" class="d-block mx-lg-auto img-fluid rounded-5 " alt="Bootstrap Themes" width="100%"  loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold lh-1 mb-3" id="heromaintext">Cashless Convenience</h1>
+        <h3 class=" fw-bold lh-1 mb-3 ">Anytime Anywhere</h3>
+        <p class="fw-normal ">Receive and send money with a digital wallet used by Filipinos.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start" >
+          <button type="button" id="herobtn1" class="btn btn-success btn-lg px-4 me-md-2 fs-6"   data-bs-toggle="modal" data-bs-target="#regmodal">Sign Up Now</button>
+          <button type="button" id="herobtn2" class="btn btn-outline-secondary btn-lg px-4 fs-6 " onclick="gotofaq()">Learn More</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  <!--End of Hero-->
+
+
+
+  <!-- Login Modal -->
+<div class="modal fade" id="loginmodal" tabindex="-1" aria-labelledby="loginmodal" aria-hidden="true" >
+  <div class="modal-dialog modal-dialog-centered " style="width: 21rem;" >
+    <div class="modal-content border-0 rounded-0 shadow " >
+      <div class="modal-header">
+        
+        <h1 class="modal-title fs-5 text-success" id="exampleModalLabel">Login</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-5">
+        <div id="loginfailedAlertPlaceholder">
+         
+        </div>
+
+       
+        <form action="#">
+          <div class="input-group mb-3">
+          
+            <input type="text" class="form-control text-muted" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"  style="font-size: 15px;" id="uname" required>
+          </div>
+          <div class="input-group">
+            
+            <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2" style="font-size: 15px;" id="pword"  required>
+            <span class="input-group-text" id="viewpasswordicon"><i class="fa-solid fa-eye-slash text-success" id="showhidepasswordicon" onclick="showhidepassword()"></i></span>
+          </div>
+        </div>
+        <button type="button" class="btn btn-success rounded-1 m-auto w-75" id="loginbtn" onclick="login()" disabled >Log in</button>
+        </form>
+      <div class="modal-footer border-0 ">
+      
+    
+        <p class="mt-2 m-auto " style="font-size: 14px;">You don't have account? <a href="" data-bs-toggle="modal" data-bs-target="#regmodal">Register</a></p>
+
+        <a href="" class="m-auto mt-3 text-success mb-3" style="font-size: 14px;">Forgot your password?</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end of login modal-->
+
+
+  <!-- registration Modal -->
+  <div class="modal fade" id="regmodal" tabindex="-1" aria-labelledby="regmodal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered " style="width: 21rem;" >
+      <div class="modal-content  rounded-0 border-0  shadow ">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-success" id="exampleModalLabel">Create an Account</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row p-3">
+              <div class="col-12 text-center mb-3">
+                <p  style="font-size: 14px;" class="text-muted">Already have an account? <a href="" class="text-success" data-bs-toggle="modal" data-bs-target="#loginmodal">Login</a></p>
+              </div>
+              <div class="col-6 mb-2">
+                <div class="input-group">
+                  
+                  <input type="text" class="form-control " placeholder="First Name" id="fnameregistration" style="font-size: 14px;" >
+                  
+                </div>
+                <div class="collapse" id="fnamevalidator">
+                  <div class="card card-body border-0 ">
+                    <p style="font-size: 13px; color: rgb(219, 21, 87);" ><i class="fa-solid fa-triangle-exclamation"></i> Required</p>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 mb-2">
+                <div class="input-group ">
+                 
+                  <input type="text" class="form-control" placeholder="Last Name" id="lnameregistration" style="font-size: 14px;"  >
+                </div>
+                <div class="collapse" id="lnamevalidator">
+                  <div class="card card-body border-0 ">
+                    <p style="font-size: 13px; color: rgb(219, 21, 87);" ><i class="fa-solid fa-triangle-exclamation"></i> Required</p>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 mb-2">
+                <div class="input-group">
+                 
+                  <input type="text" class="form-control" placeholder="Username" id="unameregistration" style="font-size: 14px;" >
+                </div>
+                <div class="collapse" id="unamevalidator">
+                  <div class="card card-body border-0 ">
+                    <p style="font-size: 13px; color: rgb(219, 21, 87);" ><i class="fa-solid fa-triangle-exclamation"></i> Required</p>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 mb-2">
+                <div class="input-group ">
+                 
+                  <input type="email" class="form-control" placeholder="Email Address" id="emailregistration" style="font-size: 14px;" >
+               
+                  
+                </div>
+                <div class="collapse" id="emailvalidator">
+                  <div class="card card-body border-0 ">
+                    <p style="font-size: 13px; color: rgb(219, 21, 87);" ><i class="fa-solid fa-triangle-exclamation"></i> Email is not valid</p>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 mb-2">
+                <div class="input-group ">
+                 
+                  <input type="password" class="form-control" placeholder="Password" id="pwordregistration" style="font-size: 14px;"  >
+                  <span class="input-group-text" id="viewpasswordiconreg"><i class="fa-solid fa-eye-slash text-success" id="showhidepasswordiconreg" onclick="showhidepasswordreg()"></i></span>
+                </div>
+                <div class="collapse " id="createpasswordinstruction">
+                  <div class="card card-body border-0">
+                    <p style="font-size: 13px; color: rgb(219, 21, 87);" ><i class="fa-solid fa-triangle-exclamation" id="validpassicon1"></i> 8 Characters</p>
+                    <p style="font-size: 13px; color: rgb(219, 21, 87);"><i class="fa-solid fa-triangle-exclamation"  id="validpassicon2"></i> 1 Special Character</p>
+                    <p style="font-size: 13px; color: rgb(219, 21, 87);"><i class="fa-solid fa-triangle-exclamation"  id="validpassicon3"></i> 1 Number</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="input-group mb-2">
+                 
+                  <input type="password" class="form-control" placeholder="Confirm password" id="confirmpwordregistration" style="font-size: 14px;">
+                  <span class="input-group-text" id="viewpasswordiconconfirmreg"><i class="fa-solid fa-eye-slash text-success" id="showhidepasswordiconconfirmreg" onclick="showhidepasswordconfirmreg()"></i></span>
+
+                </div>
+                <div class="collapse" id="passwordmatchvalidator">
+                  <div class="card card-body border-0 ">
+                    <p style="font-size: 13px; color: rgb(219, 21, 87);" ><i class="fa-solid fa-triangle-exclamation"></i> Password didn't match</p>
+
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="modal-footer text-center">
+          <p class='text-muted' style="font-size: 13px;">By registering I confirm I have read and agree to the Coinpurse <a href="#" class="text-success "> Terms of Use and Fees.</a> I also understand that Coinpurse will occasionally send me marketing messages and that I can change my preferences below or in my account settings at any time. We manage personal data as set out in our a <a href="#" class="text-success ">Privacy notice</a></p>
+          <button type="button" class="btn btn-success  w-75 m-auto mt-3 mb-3" id="registrationbtn">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--end of registration modal-->
+
+
+   <!--Features-->
+   <section class="mt-5 mb-5">
+    <div class="container">
+        <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-12 ">
+                <div class="card border-0  bg-light m-auto " style="width: 20rem;">
+                  <img src="https://icon-library.com/images/cash-icon/cash-icon-29.jpg" class="card-img-top w-25 m-auto " alt="..." >
+                  <div class="card-body p-2 mt-3 mb-4 text-center ">
+                    <h5 class="card-title ">Send Money</h5>
+                    <p class="card-text  text-muted">Send money to a bank account, E-Wallet or another Coinpurse customer.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card border-0  bg-light m-auto" style="width: 20rem;">
+                  <img src="https://cdn-icons-png.flaticon.com/512/9659/9659190.png" class="card-img-top w-25 m-auto " alt="..." >
+                  <div class="card-body p-2 mt-3 mb-4 text-center ">
+                    <h5 class="card-title ">Receive Money</h5>
+                    <p class="card-text  text-muted">Receive money via bank transfer, email or phone number.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card border-0  bg-light m-auto" style="width: 20rem;">
+                  <img src="https://cdn-icons-png.flaticon.com/512/1625/1625542.png" class="card-img-top w-25 m-auto " alt="..." >
+                  <div class="card-body p-2 mt-3 mb-4 text-center ">
+                    <h5 class="card-title ">View Transactions</h5>
+                    <p class="card-text  text-muted">You can view or check your previous or most recent transaction</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card border-0  bg-light m-auto" style="width: 20rem;">
+                  <img src="https://cdn-icons-png.flaticon.com/512/3262/3262306.png" class="card-img-top w-25 m-auto " alt="..." >
+                  <div class="card-body p-2 mt-3 mb-4 text-center ">
+                    <h5 class="card-title ">Security</h5>
+                    <p class="card-text  text-muted">Secure and seamless digital transactions</p>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+  </section>
+<!--End of Features-->
+
+
+
+
+  <!--cx reviews-->
+        
+              
+          <div class="section">
+            <div class="container mb-5">
+              <div class="row mb-5">
+                <div class="col-12 mt-5 mb-1 text-center">
+                  <h2 class="text-success">User Reviews</h2>
+              </div>
+                
+              </div>
+              <div id="cxreviewscarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#cxreviewscarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" style="background-color: #14A44D; width: 50px; height: 4px;"></button>
+                  <button type="button" data-bs-target="#cxreviewscarousel" data-bs-slide-to="1"   aria-label="Slide 2" style="background-color: #14A44D; width: 50px; height: 4px;"></button>
+                  <button type="button" data-bs-target="#cxreviewscarousel" data-bs-slide-to="2"  aria-label="Slide 3" style="background-color: #14A44D; width: 50px; height: 4px;"></button>
+                </div>
+                <div class="carousel-inner">
+                  
+                  <div class="carousel-item active" data-bs-interval="4000" style="margin-bottom: 15%;">
+                      <div class="row">
+                        <div class="col-lg-3 col-md-6 ">
+                          <div class="card border-0  mt-5 m-auto " style="width: 20rem;">
+                            <div class="row">
+                              <div class="col-4 m-auto mt-5">
+                                <img src="https://live.staticflickr.com/7310/13197804604_747bc05acb_z.jpg" class="card-img-top rounded shadow " alt="">
+                              </div>
+                            </div>
+                            <div class="card-body text-center ">
+                              <p class="card-text fw-bold ">Juan Dela Cruz</p>
+                              <p class="card-text text-muted" style="font-size: 15px;">fast transactions, and great support.
+        
+                              </p>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                            </div>
+                          </div>
+                         </div>
+                         <div class="col-lg-3 col-md-6">
+                          <div class="card border-0  mt-5 m-auto " style="width: 20rem;">
+                            <div class="row">
+                              <div class="col-4 m-auto mt-5">
+                                <img src="https://64.media.tumblr.com/e6650a732736a0e8c875fbcb95744dcc/30c3e163abb35f0c-25/s1280x1920/ae92d9a2cd0495e15b70c7c178cf597aa4c6b78a.jpg" class="card-img-top rounded shadow " alt="">
+                              </div>
+                            </div>
+                            <div class="card-body text-center ">
+                              <p class="card-text fw-bold ">Jeron Avilla</p>
+                              <p class="card-text text-muted" style="font-size: 15px;">my deposit was very fast and good</p>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                            </div>
+                          </div>
+                         </div>
+                         <div class="col-lg-3 col-md-6">
+                          <div class="card border-0  mt-5 m-auto " style="width: 20rem;">
+                            <div class="row">
+                              <div class="col-4 m-auto mt-5">
+                                <img src="https://d1hv7ee95zft1i.cloudfront.net/custom/dealer-administrator/original/edna-reyes-60e07892d42bf.jpg" class="card-img-top rounded shadow " alt="">
+                              </div>
+                            </div>
+                            <div class="card-body text-center ">
+                              <p class="card-text fw-bold ">Edna Reyes</p>
+                              <p class="card-text text-muted" style="font-size: 15px;">fast and reliable with a helpful team.
+        
+                              </p>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                            </div>
+                          </div>
+                         </div>
+                         <div class="col-lg-3 col-md-6">
+                          <div class="card border-0  mt-5 m-auto " style="width: 20rem;">
+                            <div class="row">
+                              <div class="col-4 m-auto mt-5">
+                                <img src="https://live.staticflickr.com/7570/15633581340_5974b86d88_z.jpg" class="card-img-top rounded shadow " alt="">
+                              </div>
+                            </div>
+                            <div class="card-body text-center ">
+                              <p class="card-text fw-bold ">Carl Dela Fuente</p>
+                              <p class="card-text text-muted" style="font-size: 15px;">Love this website. Simple good to use</p>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                            </div>
+                          </div>
+                        </div> 
+                      </div>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="4000" style="margin-bottom: 15%;">
+                      <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                          <div class="card border-0  mt-5 m-auto " style="width: 20rem;">
+                            <div class="row">
+                              <div class="col-4 m-auto mt-5">
+                                <img src="https://live.staticflickr.com/7570/15633581340_5974b86d88_z.jpg" class="card-img-top rounded shadow " alt="">
+                              </div>
+                            </div>
+                            <div class="card-body text-center ">
+                              <p class="card-text fw-bold ">Carl Dela Fuente</p>
+                              <p class="card-text text-muted" style="font-size: 15px;">Love this website. Simple good to use</p>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                          <div class="card border-0  mt-5 m-auto " style="width: 20rem;">
+                            <div class="row">
+                              <div class="col-4 m-auto mt-5">
+                                <img src="https://fastly.4sqi.net/img/general/600x600/71703339_ZgbGamULPLLbDnfzzhKl6qKQkGIE_LpfSx7I4kCP0AI.jpg" class="card-img-top rounded shadow " alt="">
+                              </div>
+                            </div>
+                            <div class="card-body text-center ">
+                              <p class="card-text fw-bold ">Joan Dela Cruz</p>
+                              <p class="card-text text-muted" style="font-size: 15px;">my deposit was very fast and good</p>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                            </div>
+                          </div>
+                         </div>
+                         <div class="col-lg-3 col-md-6">
+                          <div class="card border-0  mt-5 m-auto " style="width: 20rem;">
+                            <div class="row">
+                              <div class="col-4 m-auto mt-5">
+                                <img src="https://media.licdn.com/dms/image/C5603AQEfHzdz7TEcIA/profile-displayphoto-shrink_800_800/0/1517514700271?e=2147483647&v=beta&t=XNixtGxdoy2JgUBOZ91E07oq1dOILXjr8ZzFOOgaxDA" class="card-img-top rounded shadow " alt="">
+                              </div>
+                            </div>
+                            <div class="card-body text-center ">
+                              <p class="card-text fw-bold ">Jaya Alla</p>
+                              <p class="card-text text-muted" style="font-size: 15px;">Love this website. Simple good to use </p>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                            </div>
+                          </div>
+                         </div>
+                         <div class="col-lg-3 col-md-6">
+                          <div class="card border-0  mt-5 m-auto " style="width: 20rem;">
+                            <div class="row">
+                              <div class="col-4 m-auto mt-5">
+                                <img src="https://live.staticflickr.com/7570/15633581340_5974b86d88_z.jpg" class="card-img-top rounded shadow " alt="">
+                              </div>
+                            </div>
+                            <div class="card-body text-center ">
+                              <p class="card-text fw-bold ">Carl Dela Fuente</p>
+                              <p class="card-text text-muted" style="font-size: 15px;">Love this website. Simple good to use</p>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                              <i class="fa fa-star text-warning "></i>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="4000" style="margin-bottom: 15%;">
+                    <div class="row">
+                      <div class="col-lg-3 col-md-6">
+                        <div class="card border-0  mt-5 m-auto " style="width: 20rem;">
+                          <div class="row">
+                            <div class="col-4 m-auto mt-5">
+                              <img src="https://media.licdn.com/dms/image/C5603AQEfHzdz7TEcIA/profile-displayphoto-shrink_800_800/0/1517514700271?e=2147483647&v=beta&t=XNixtGxdoy2JgUBOZ91E07oq1dOILXjr8ZzFOOgaxDA" class="card-img-top rounded shadow " alt="">
+                            </div>
+                          </div>
+                          <div class="card-body text-center ">
+                            <p class="card-text fw-bold ">Jaya Alla</p>
+                            <p class="card-text text-muted" style="font-size: 15px;">Love this website. Simple good to use </p>
+                            <i class="fa fa-star text-warning "></i>
+                            <i class="fa fa-star text-warning "></i>
+                            <i class="fa fa-star text-warning "></i>
+                            <i class="fa fa-star text-warning "></i>
+                            <i class="fa fa-star text-warning "></i>
+                          </div>
+                        </div>
+                       </div>
+                       <div class="col-lg-3 col-md-6">
+                        <div class="card border-0  mt-5 m-auto " style="width: 20rem;">
+                          <div class="row">
+                            <div class="col-4 m-auto mt-5">
+                              <img src="https://fastly.4sqi.net/img/general/600x600/71703339_ZgbGamULPLLbDnfzzhKl6qKQkGIE_LpfSx7I4kCP0AI.jpg" class="card-img-top rounded shadow " alt="">
+                            </div>
+                          </div>
+                          <div class="card-body text-center ">
+                            <p class="card-text fw-bold ">Joan Dela Cruz</p>
+                            <p class="card-text text-muted" style="font-size: 15px;">my deposit was very fast and good</p>
+                            <i class="fa fa-star text-warning "></i>
+                            <i class="fa fa-star text-warning "></i>
+                            <i class="fa fa-star text-warning "></i>
+                            <i class="fa fa-star text-warning "></i>
+                            <i class="fa fa-star text-warning "></i>
+                          </div>
+                        </div>
+                       </div>
+                       <div class="col-lg-3 col-md-6">
+                        <div class="card border-0  mt-5 m-auto " style="width: 20rem;">
+                          <div class="row">
+                            <div class="col-4 m-auto mt-5">
+                              <img src="https://pbs.twimg.com/media/C6pSEw3VoAEs1gY.jpg" class="card-img-top rounded shadow " alt="">
+                            </div>
+                          </div>
+                          <div class="card-body text-center ">
+                            <p class="card-text fw-bold ">Edmon Cruz</p>
+                            <p class="card-text text-muted" style="font-size: 15px;">fast and reliable with a helpful team.
+       
+                            </p>
+                            <i class="fa fa-star text-warning "></i>
+                            <i class="fa fa-star text-warning "></i>
+                            <i class="fa fa-star text-warning "></i>
+                            <i class="fa fa-star text-warning "></i>
+                            <i class="fa fa-star text-warning "></i>
+                          </div>
+                        </div>
+                       </div>
+                       <div class="col-lg-3 col-md-6">
+                        <div class="card border-0  mt-5 m-auto " style="width: 20rem;">
+                          <div class="row">
+                            <div class="col-4 m-auto mt-5">
+                              <img src="https://assets.gogetfunding.com/wp-content/uploads/2021/03/7083377/img/mimg_7083377_1614618671-630x633.jpg" class="card-img-top rounded shadow " alt="">
+                            </div>
+                          </div>
+                          <div class="card-body text-center ">
+                            <p class="card-text fw-bold ">Carlos Fuentes</p>
+                            <p class="card-text text-muted" style="font-size: 15px;">my deposit was very fast and good</p>
+                            <i class="fa fa-star text-warning "></i>
+                            <i class="fa fa-star text-warning "></i>
+                            <i class="fa fa-star text-warning "></i>
+                            <i class="fa fa-star text-warning "></i>
+                            <i class="fa fa-star text-warning "></i>
+                          </div>
+                        </div>
+                       </div>
+
+                    </div>
+                  </div>
+                </div>
+            </div>
+            
+          </div>
+          
+
+      
+  <!--end of cx reviews-->
+
+
+
+  <!--Partners-->
+
+ <section>
+    <div class="container mt-5" >
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2 class="text-success">Partners</h2>
+      </div>
+        
+      </div>
+      <div id="partnerscarousel" class="carousel slide" data-bs-ride="carousel">
+        
+        <div class="carousel-inner">
+          
+          <div class="carousel-item active " data-bs-interval="2000" >
+          
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                  <div class="card border-0 mt-4 bg-light" style="width: 21rem;">
+                              
+                    <div class="card-body d-flex justify-content-center ">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/GCash_logo.svg/2560px-GCash_logo.svg.png" class="card-img w-50"   alt="...">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                  <div class="card border-0 mt-4 bg-light" style="width: 21rem;">
+                              
+                    <div class="card-body d-flex justify-content-center ">
+                      <img src="https://i.pinimg.com/originals/20/b6/31/20b631c40aa024030ae174661826f16f.jpg" class="card-img w-50 " alt="...">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                  <div class="card border-0 mt-4 bg-light" style="width: 21rem;">
+                              
+                    <div class="card-body d-flex justify-content-center ">
+                      <img src="https://phlogos.com/logos/pldt/pldt.png" class="card-img w-50"  alt="...">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                  <div class="card border-0 mt-4 bg-light" style="width: 21rem;">
+                              
+                    <div class="card-body d-flex justify-content-center ">
+                      <img src="https://phlogos.com/logos/pnb/pnb.png" class="card-img w-50" alt="...">
+                    </div>
+                  </div>
+                </div>
+            </div>
+            
+          </div>
+          <div class="carousel-item" data-bs-interval="2000" >
+
+            <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card border-0 mt-4 bg-light" style="width: 22rem;">
+                            
+                  <div class="card-body d-flex justify-content-center ">
+                    <img src="https://queen.jollibee.com.ph/2022/02/jollibee-logo-footer-2x.png" class="card-img w-50 "   alt="...">
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card border-0 mt-4 bg-light" style="width: 22rem;">
+                            
+                  <div class="card-body d-flex justify-content-center ">
+                    <img src="https://i0.wp.com/rooftopleadership.com/wp-content/uploads/2023/04/JP-Morgan-Chase-Logo-e1681390058665.png?fit=3840%2C1267&ssl=1" class="card-img w-50 " alt="...">
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card border-0 mt-4 bg-light" style="width: 22rem;">
+                            
+                  <div class="card-body d-flex justify-content-center ">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Cargomatic_%28Company%29_Logo.png" class="card-img w-50"  alt="...">
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card border-0 mt-4 bg-light" style="width: 22rem;">
+                            
+                  <div class="card-body d-flex justify-content-center ">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/The_Himalaya_Drug_Company_logo.png" class="card-img w-50" alt="...">
+                  </div>
+                </div>
+              </div>
+          </div>
+               
+
+             
+          </div>
+         
+        </div>
+    </div>
+    
+  </section>
+
+
+<!--End of Partners-->
+  
+  
+         
+
+  <!--Footer-->
+
+    <div class="container-fluid mt-5" style="background-color: #14A44D;" >
+      <div class="container">
+        <footer class="py-5">
+          <div class="row">
+    
+              <div class="col-lg-12 mt-5">
+                 <a href="#" style="text-decoration: none;"><h1 id="footermainlogo" class="text-white">Coinpurse</h1></a>
+                 <h4 class="text-white ">Cashless Convenience
+                  Anytime Anywhere</h4>
+              </div>
+      
+            
+      
+            
+          </div>
+      
+          <div class="d-flex flex-column flex-sm-row justify-content-between py-4 " >
+            <p class="text-white">&copy; 2023 Coinpurse, Inc. All rights reserved.</p>
+            <ul class="list-unstyled d-flex">
+              <li class="ms-3" ><a class="fs-3" href="#" ><i class="fa-brands fa-square-facebook text-white" ></i></a></li>
+              <li class="ms-3"><a class="fs-3 " href="#"  ><i class="fa-brands fa-square-twitter text-white"></i></a></li>
+              <li class="ms-3"><a class="fs-3 " href="#"><i class="fa-brands fa-square-instagram text-white"></i></a></li>
+            </ul>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/e32f95e99e.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="./script/index.js"></script>
+    <script>
+        localStorage.setItem('accountbalance',420)
+    </script>
+  </body>
+</html>

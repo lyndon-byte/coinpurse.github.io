@@ -1,0 +1,31 @@
+@media (max-width: 990px) {
+    
+    #heroimg{
+
+        margin: auto;
+    }
+
+    #herocontainer{
+
+        text-align: center;
+    }
+    #herobtn1, #herobtn2{
+
+        margin: auto;
+        width: 300px;
+    }
+    .modal-dialog{
+
+            margin: auto;
+    }
+    #phflag{
+
+        width: 13%;
+    }
+
+
+
+}   
+
+
+
