@@ -46,7 +46,7 @@ function login(){
     const alertPlaceholder = document.getElementById('loginfailedAlertPlaceholder')
     if( usernameinput == 'kodego' && passwordinput == 'kodego'){
 
-      window.location.href='./dashboard.html'
+      window.location.href='dashboard.html'
     }
     else{
 
